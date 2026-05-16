@@ -3,6 +3,22 @@
 # 1) List/ Array     ----> for small amount of data
 # 2) Linked List     ----> for large amount of data
 
+# -- Stack using List
+# -Easy to Implememnt 
+# -Speed problem when it grows
+
+# -- Stack using LinkedLists
+# -Fast Performance
+# -Implementation is not easy
+
+# Operation              Time Complexity               Space Complexity
+# Create                  O(1)                         O(1)
+# Push                    O(1)  / O(N2) N sqaure       O(1)
+# Pop                     O(1)                         O(1)
+# Peek                    O(1)                         O(1)
+# isEmpty                 O(1)                         O(1) 
+# Delete Entire Stack     O(1)                         O(1)
+
 # Stack Operations
 # 1) Push 
 # 2) Pop 
