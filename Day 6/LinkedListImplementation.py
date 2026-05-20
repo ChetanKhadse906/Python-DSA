@@ -45,11 +45,6 @@ class LinkedList:
             self.tail.next=self.node
             self.tail     =self.node
 
-    def display(self):
-        while self.head!=None:
-            print(self.head.data)
-            self.head=self.head.next
-
     def addBeginning(self, value):
         self.node=Node(value)
         if self.head==None:
@@ -59,7 +54,41 @@ class LinkedList:
             self.node.next=self.head
             self.head=self.node
 
+    def addNodeBetween(self, value, index):
+        self.node = Node(value)
 
+        # If Linked List is empty
+        if self.head is None:
+            self.head = self.node
+            self.tail = self.node
+
+        # Insert at beginning
+        elif index == 0:
+            self.node.next = self.head
+            self.head = self.node
+
+        # Insert in between
+        else:
+            temp = self.head
+            count = 0
+
+        # Move temp to node before required index
+        while count < index - 1 and temp is not None:
+            temp = temp.next
+            count += 1
+
+            # Insert node
+            self.node.next = temp.next
+            temp.next = self.node
+
+            # If inserted at last position
+            if self.node.next is None:
+                self.tail = self.node
+
+    def display(self):
+        while self.head!=None:
+            print(self.head.data)
+            self.head=self.head.next
 
 if __name__== '__main__':
     Object=LinkedList()   # LinkedList object created 
@@ -80,9 +109,15 @@ if __name__== '__main__':
             print("Node added Successfully in Single LinkedList")
 
         elif choice==2:
-            value=int(input("Enter the valur for node: "))
+            value=int(input("Enter the value for node: "))
             Object.addBeginning(value)
             print("Node added at Beginning ")
+        
+        elif choice==3:
+            value=int(input("Enter the value for node:  "))
+            index=int(input("Enter the index at which you want to insert node: "))
+            Object.addNodeBetween(value,index)
+            print("Node added in Between")
         
         elif choice==5:
             Object.display()
