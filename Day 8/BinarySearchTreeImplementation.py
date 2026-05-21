@@ -7,7 +7,7 @@ class BSTNode:
 def insertNode(rootNode, nodeValue):# 70->50->90->30
     if rootNode.data==None:
         rootNode.data=nodeValue
-    elif nodeValue<=rootNode.data:
+    elif nodeValue<rootNode.data:
         if rootNode.leftChild is None:
             rootNode.leftChild=BSTNode(nodeValue)
         else:
