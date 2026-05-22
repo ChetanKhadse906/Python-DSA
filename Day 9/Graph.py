@@ -18,7 +18,7 @@ class Graph:
                 return True
             return False
 
-    def removeVertex(self, vertex):
+    def removeVertex(self, vertex):           
         if vertex in self.adjancency_list.keys():
             self.adjancency_list.pop(vertex)
         
